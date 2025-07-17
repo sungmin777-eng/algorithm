@@ -22,3 +22,56 @@ for (let i = 2; i <= N; i++) {
 // 길이 N에서 끝나는 모든 계단수의 합
 const answer = dp[N].reduce((sum, val) => (sum + val) % MOD, 0);
 console.log(answer);
+
+
+const N = 5;
+const score = [10, 20, 15, 25, 10]; // 1번~5번 계단 점수
+const score=new Array(N+1)  //const는 한 번만 써야됨.
+const dp=new Array(N+ 1).fill(0)
+dp[1]=score[1]
+dp[2]=score[1]+score[2]
+for (let i=3;i<=N;i++){
+  dp[i]=Math.max(
+    dp[i-2]+score[i],
+    dp[i-3]+score[i-1]+score[i]
+  )
+}
+console.log(dp[N])
+
+const N = 5;
+const score = [0, 10, 20, 15, 25, 10]; // 1-based index
+const dp = new Array(N + 1).fill(0);
+
+dp[1] = score[1];
+dp[2] = score[1] + score[2];
+
+for (let i = 3; i <= N; i++) {
+  dp[i] = Math.max(
+    dp[i - 2] + score[i],
+    dp[i - 3] + score[i - 1] + score[i]
+  );
+}
+
+console.log(dp[N]); // ✅ 결과 출력
+
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+
+const N = Number(input[0]);
+const score = [0]; // 1-based 인덱스
+for (let i = 1; i <= N; i++) {
+  score[i] = Number(input[i]);
+}
+
+const dp = new Array(N + 1).fill(0);
+dp[1] = score[1];
+dp[2] = score[1] + score[2];
+
+for (let i = 3; i <= N; i++) {
+  dp[i] = Math.max(
+    dp[i - 2] + score[i],
+    dp[i - 3] + score[i - 1] + score[i]
+  );
+}
+
+console.log(dp[N]);
