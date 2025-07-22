@@ -22,3 +22,6 @@ function countingSort(arr: number[], maxValue: number): number[] {
 
   return output;
 }
+const input = [2, 5, 3, 0, 2, 3, 0, 3];
+const sorted = countingSort(input, 5);
+console.log(sorted); 
