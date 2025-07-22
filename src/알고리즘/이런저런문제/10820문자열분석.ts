@@ -15,6 +15,13 @@ for(let i=0;i<input.length;i++){
 
 console.log(line1)
 
+const input: string[] = [
+    'This is String',
+    'SPACE    1    SPACE',
+    ' S a M p L e I n P u T     ',
+    '0L1A2S3T4L5I6N7E8'
+];
+
 // 문자열에서 소문자, 대문자, 숫자, 공백의 개수를 세는 함수
 function countCharacters(str: string): number[] {
     let lowercase = 0;
@@ -38,6 +45,7 @@ function countCharacters(str: string): number[] {
     // 결과 배열로 반환
     return [lowercase, uppercase, digits, spaces];
 }
+console.log(countCharacters(input.forEach(line)))
 
 // 예시 입력 배열 (문제에서 제공된 예제 입력)
 const input: string[] = [
@@ -57,3 +65,26 @@ let numbers = [1, 2, 3, 4];
 numbers.forEach((num, index) => {
     console.log(`Index: ${index}, Value: ${num}`);
 });
+
+const input = [
+  "This is String",
+  "SPACE    1    SPACE",
+  " S a M p L e I n P u T     ",
+  "0L1A2S3T4L5I6N7E8"
+];
+
+for (let str of input) {
+  let lowerCount = 0;
+  let upperCount = 0;
+  let digitCount = 0;
+  let spaceCount = 0;
+  
+  for (let char of str) {
+    if (char >= 'a' && char <= 'z') lowerCount++;   // 소문자
+    else if (char >= 'A' && char <= 'Z') upperCount++;  // 대문자
+    else if (char >= '0' && char <= '9') digitCount++;  // 숫자
+    else if (char === ' ') spaceCount++;  // 공백
+  }
+  
+  console.log(`${lowerCount} ${upperCount} ${digitCount} ${spaceCount}`);
+}
