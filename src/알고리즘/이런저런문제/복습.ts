@@ -49,4 +49,31 @@ console.log(line)
 }
 console.log(output.join('\n'))
 
+const input=
+`4
+1 3 5 7`
 
+const line=input.split('\n')
+const n=Number(line[0])
+const digit=line[1].split(' ').map(Number)
+
+console.log(digit)
+
+function gcd(a:number,b:number){
+    while(b!==0){
+        let temp=b
+        b=a%b
+        a=temp
+    }
+    return a;
+}
+function gcdsumthing(digit:number[]){
+let gcdsum=0
+for (let i=0;i<digit.length;i++){
+    for(let j=i+1;j<digit.length;j++){
+       gcdsum+= gcd(digit[i],digit[j])
+    }
+}
+return gcdsum
+}
+console.log(gcdsumthing(digit))

@@ -20,10 +20,12 @@ function countingSort(arr: number[], maxValue: number): number[] {
     const pos = count[current] - 1;
     output[pos] = current;
     count[current]--;
-  }
 
+  }
+ 
   return output;
 }
 const input = [2, 5, 3, 0, 2, 3, 0, 3];
 const sorted = countingSort(input, 5);
 console.log(sorted); 
+
