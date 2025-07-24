@@ -15,15 +15,15 @@ function sieveOfEratosthenes(limit: number): boolean[] {
 }
 
 // 골드바흐 추측을 검증하는 함수
-function verifyGoldbachConjecture(n: number, isPrime: boolean[]): string {
-    for (let a = 3; a <= n / 2; a += 2) {
-        const b = n - a;
-        if (isPrime[a] && isPrime[b]) {
-            return `${n} = ${a} + ${b}`;
+    function verifyGoldbachConjecture(n: number, isPrime: boolean[]): string {
+        for (let a = 3; a <= n / 2; a += 2) {
+            const b = n - a;
+            if (isPrime[a] && isPrime[b]) {
+                return `${n} = ${a} + ${b}`;
+            }
         }
+        return "Goldbach's conjecture is wrong.";
     }
-    return "Goldbach's conjecture is wrong.";
-}
 
 // 입력값을 직접 설정
 const inputs = [8, 20, 42];  // 테스트할 숫자들을 배열로 설정
