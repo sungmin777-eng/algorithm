@@ -15,14 +15,15 @@ const edges:number[][]=lines.slice(1).map(line => {
 });;
 console.log(edges)
 
-const graph:number[][]=Array.from({length:m+1},()=>[])
+const graph:number[][]=Array.from({length:n+1},()=>[])
 
 for (const [a,b] of edges){
     graph[a].push(b);
     graph[b].push(a);
 }
 
-const visited:boolean[]=Array(m+1).fill(false)
+const visited:boolean[]=Array(n+1).fill(false)
+
 function dfs(n:number){
     visited[n]=true
 
