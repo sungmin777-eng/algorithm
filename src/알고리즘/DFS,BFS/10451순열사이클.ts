@@ -27,4 +27,5 @@ for (let t = 0; t < T; t++) {
   }
 
   console.log(cycleCount);
+  
 }
