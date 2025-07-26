@@ -25,6 +25,7 @@ for (const [a, b] of edges) {
 for (let i = 1; i <= N; i++) {
   graph[i].sort((a, b) => a - b);
 }
+console.log(graph)
 
 // ✅ DFS 구현 (재귀)
 const dfsVisited = Array(N + 1).fill(false);
@@ -48,6 +49,7 @@ const bfsResult: number[] = [];
 
 function bfs(start: number) {
   const queue: number[] = [start];
+  console.log(queue)
   bfsVisited[start] = true;
 
   while (queue.length > 0) {
