@@ -35,6 +35,5 @@ const dfsResult: number[] = [];
 
 function dfs(v: number) {
   dfsVisited[v] = true;
-  dfsResult.push(v);
-  
+  dfsResult.push(v); 
 }

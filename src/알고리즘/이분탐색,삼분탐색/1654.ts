@@ -19,7 +19,7 @@ while (left <= right) {
     console.log(mid)
     let count = 0;
     for (const cable of cables) {
-        count += Math.floor(cable / mid); // mid 길이로 잘랐을 때 몇 개 만들 수 있는지
+        count += Math.floor(cable / mid);// mid 길이로 잘랐을 때 몇 개 만들 수 있는지
         
     }
 
