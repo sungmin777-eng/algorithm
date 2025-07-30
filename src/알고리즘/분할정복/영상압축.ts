@@ -25,7 +25,7 @@ function compress(x: number, y: number, size: number): string {
         break;
       }
     }
-    if (!isSame) break;
+    if (!isSame) break; //for 바깥 반복문에 대해서도 break해줘야 함. 
   }
 
   if (isSame) return first;
