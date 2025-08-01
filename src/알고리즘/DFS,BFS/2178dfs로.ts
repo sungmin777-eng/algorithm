@@ -25,7 +25,7 @@ function isHouese(x:number,y:number):boolean{
 }
 
 function dsf(x:number,y:number){
-    visited[y][x]=true
+    visited[x][y]=true
     let count=1;
 
     for(let i=0;i<4;i++){
@@ -40,8 +40,8 @@ return count;
 }
 let result=[]
 for(let i=0;i<M;i++){
-    for( let j=0;j<;j++){
-        if(path(i,j)){
+    for( let j=0;j<N;j++){
+        if(isHouese(i,j)){
             const housecount=dfs(i,j)
             result.push(housecount)
         }

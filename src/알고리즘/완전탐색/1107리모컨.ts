@@ -24,6 +24,7 @@ for (let channel = 0; channel <= 999999; channel++) {
   for (const ch of str) {
     if (isBroken[+ch]) {
       canPress = false;
+      
       break;
     }
   }
@@ -34,5 +35,5 @@ for (let channel = 0; channel <= 999999; channel++) {
   const presses = str.length + Math.abs(N - channel);
   answer = Math.min(answer, presses);
 }
-
+//후...
 console.log(answer);

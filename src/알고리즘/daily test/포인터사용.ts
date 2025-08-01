@@ -44,6 +44,7 @@ for (let i: number = 1; i <= N; i++) {
         output.push('-1');
       } else {
         output.push(buffer[head++].toString());
+        console.log(head)
       }
       break;
 
@@ -52,7 +53,7 @@ for (let i: number = 1; i <= N; i++) {
         output.push('-1');
       } else {
         output.push(buffer[--tail].toString());
-      }
+      }console.log(tail)
       break;
 
     case 'size':
@@ -61,6 +62,7 @@ for (let i: number = 1; i <= N; i++) {
 
     case 'empty':
       output.push(head === tail ? '1' : '0');
+    
       break;
 
     case 'front':

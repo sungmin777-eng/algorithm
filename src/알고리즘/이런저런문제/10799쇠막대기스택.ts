@@ -1,3 +1,5 @@
+const input='((()))(())'
+
 function countIronStickPieces(input: string): number {
   const stack: string[] = [];
   let result = 0;
@@ -22,3 +24,4 @@ function countIronStickPieces(input: string): number {
 
   return result;
 }
+console.log(countIronStickPieces(input))
