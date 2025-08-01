@@ -1,18 +1,19 @@
-function isValid(s: string): boolean {
-  const stack: string[] = [];
+const line=`()(((()())(())()))(())`.trim()
+let stack = [];
+let result = 0;
 
-  for (let char of s) {
-    if (char === '(') {
-      stack.push(char);
-    } else if (char === ')') {
-      if (stack.length === 0) return false;
-      stack.pop();
+for (let i = 0; i < line.length; i++) {
+  if (line[i] === '(') {
+    stack.push('(');
+  } else {
+    stack.pop(); 
+    if (line[i - 1] === '(') {
+ 
+      result += stack.length;
+    } else {
+      result += 1;
     }
   }
-
-  return stack.length === 0;
 }
 
-console.log(isValid("(())()")); 
-console.log(isValid("(()("));   
-console.log(isValid(")("));  
+console.log(result);
