@@ -14,20 +14,20 @@ const dx = [-1, 1, 0, 0];
 const dy = [0, 0, -1, 1];
 
 
-const queue: [number, number][] = [];
+const que: [number, number][] = [];
 
 for (let i = 0; i < N; i++) {
   for (let j = 0; j < M; j++) {
     if (box[i][j] === 1) {
-      queue.push([i, j]);
-      console.log(queue)
+      que.push([i, j]);
+      console.log(que)
     }
   }
 }
 
 let front = 0;
-while (front < queue.length) {
-  const [x, y] = queue[front++];
+while (front < que.length) {
+  const [x, y] = que[front++];
 
   for (let i = 0; i < 4; i++) {
     const nx = x + dx[i];
@@ -39,7 +39,7 @@ while (front < queue.length) {
       box[nx][ny] === 0
     ) {
       box[nx][ny] = box[x][y] + 1;
-      queue.push([nx, ny]);
+      que.push([nx, ny]);
     }
   }
   console.log(front)

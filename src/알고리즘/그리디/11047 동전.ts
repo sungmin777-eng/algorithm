@@ -12,16 +12,16 @@ const input = `10 4200
 
 const [NK, ...rest] = input;
 const [N, K] = NK.split(' ').map(Number);
-const coins = rest.map(Number);
+const lines = rest.map(Number);
 
 
-coins.sort((a, b) => b - a);
+lines.sort((a, b) => b - a);
 
 let remain = K;
 console.log(K)
 let ans = 0;
 
-for (const coin of coins) {
+for (const coin of lines) {
   if (remain === 0) break;
   const cnt = Math.floor(remain / coin);
   ans += cnt;

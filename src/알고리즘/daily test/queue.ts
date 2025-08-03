@@ -33,12 +33,12 @@ const output:string[]=[]
 for (const [x,y] of lines){
     switch (x){
         case 'push':
-            queue.push(Number(y))
+            que.push(Number(y))
             break
         case 'pop':
-            output.push(queue.length?String(queue.shift()):'-1')
+            output.push(que.length?String(que.shift()):'-1')
         case 'size':
-            output.push(String(queue.length))
+            output.push(String(que.length))
 
         case 'empty'
 
